@@ -72,7 +72,7 @@ export const FinishButton: React.FC<{
       onClick={() => navigate('/leader-board')}
       id={'finish-button'}
     >
-      Exit
+      Finish
     </FinishButtonStyle>
   );
 };
