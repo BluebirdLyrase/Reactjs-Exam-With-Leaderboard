@@ -31,6 +31,7 @@ export const InputText: React.FC<InputProps> = ({ placeholder, name }) => {
 
   return (
     <StyledInput
+      id='username-input'
       type='text'
       placeholder={placeholder}
       onChange={field.onChange}

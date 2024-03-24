@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import { Home } from './screen/Home/Home';
+import { Exam } from './screen/Exam/Exam';
 
 export default function App() {
   console.log('TEST');
@@ -10,23 +11,15 @@ export default function App() {
             parent route elements. See the note about <Outlet> below. */}
       <Routes>
         <Route path='' element={<Home />} />
-        <Route path='about' element={<Exam />} />
-        <Route path='dashboard' element={<Dashboard />} />
+        <Route path='exam' element={<Exam />} />
+        <Route path='leader-board' element={<Leaderboard />} />
         <Route path='*' element={<NoMatch />} />
       </Routes>
     </div>
   );
 }
 
-function Exam() {
-  return (
-    <div>
-      <h2>Exam</h2>
-    </div>
-  );
-}
-
-function Dashboard() {
+function Leaderboard() {
   return (
     <div>
       <h2>Dashboard</h2>
