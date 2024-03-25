@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { useExamContext } from '../context/ExamContext';
 import { UseFormReturn } from 'react-hook-form';
+import { useUserStore } from '../../../store/useUserStore';
+import { useLeaderBoard } from '../../../store/useLeaderBoard';
+import { examListType } from '../context/hook/useExam';
 
 export const ButtonStyle = css`
   padding: 10px 20px;
@@ -63,13 +65,19 @@ export const ExistButton: React.FC = () => {
 export const FinishButton: React.FC<{
   form: UseFormReturn;
   currentName: string;
-}> = ({ form, currentName }) => {
+  examList: examListType;
+}> = ({ form, currentName, examList }) => {
   const navigate = useNavigate();
+  const user = useUserStore((state) => state.user);
+  const onFinish = useLeaderBoard((state) => state.onFinish);
   const value = form.watch(currentName);
   return (
     <FinishButtonStyle
       disabled={!value}
-      onClick={() => navigate('/leader-board')}
+      onClick={form.handleSubmit((value) => {
+        onFinish(user, examList, value);
+        navigate('/leader-board');
+      })}
       id={'finish-button'}
     >
       Finish

@@ -32,10 +32,11 @@ export const CenteredContainer = styled.div`
   width: 100%;
 `;
 
-export const Card = styled.div<{ height?: string }>`
+export const Card = styled.div<{ height?: string; minHeight?: string }>`
   background-color: #ffffff;
   width: 80%;
   height: ${({ height }) => height || 'auto'};
+  min-height: ${({ minHeight }) => minHeight || 'auto'};
   max-width: 400px;
   padding: 20px;
   border: 1px solid #ccc;

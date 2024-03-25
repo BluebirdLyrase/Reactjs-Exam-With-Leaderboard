@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from 'react-router-dom';
 import { Home } from './screen/Home/Home';
 import { Exam } from './screen/Exam/Exam';
+import { LeaderBoard } from './screen/LeaderBoard/LeaderBoard';
 
 export default function App() {
   console.log('TEST');
@@ -12,17 +13,9 @@ export default function App() {
       <Routes>
         <Route path='' element={<Home />} />
         <Route path='exam' element={<Exam />} />
-        <Route path='leader-board' element={<Leaderboard />} />
+        <Route path='leader-board' element={<LeaderBoard />} />
         <Route path='*' element={<NoMatch />} />
       </Routes>
-    </div>
-  );
-}
-
-function Leaderboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
     </div>
   );
 }

@@ -9,6 +9,7 @@ export const useUserStore = create<UserState>()((set) => {
   return {
     user: "",
     setUser: (user) => {
+      console.log("user:", user);
       return set(() => ({ user }));
     },
   };

@@ -19,7 +19,7 @@ type ButtonProps = {
 };
 
 export const EnterButton: React.FC<ButtonProps> = ({ form }) => {
-  const login = useUserStore((state) => state.setUser);
+  const setUser = useUserStore((state) => state.setUser);
   const username = form.watch(`username`);
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ export const EnterButton: React.FC<ButtonProps> = ({ form }) => {
       id='enter-btn'
       disabled={!username}
       onClick={form.handleSubmit((value) => {
-        login(value.name);
+        setUser(value.username);
         return navigate(`exam`);
       })}
     >

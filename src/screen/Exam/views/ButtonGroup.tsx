@@ -9,7 +9,7 @@ import { Divider } from '../component/Divider';
 import { useExamContext } from '../context/ExamContext';
 
 export const ButtonGroup = () => {
-  const { currentExamIndex, toNext, toBack, form, currentName } =
+  const { currentExamIndex, toNext, toBack, form, currentName, examList } =
     useExamContext();
 
   return (
@@ -28,7 +28,11 @@ export const ButtonGroup = () => {
           {currentExamIndex != 19 ? (
             <NextButton toNext={toNext} form={form} currentName={currentName} />
           ) : (
-            <FinishButton form={form} currentName={currentName} />
+            <FinishButton
+              form={form}
+              currentName={currentName}
+              examList={examList}
+            />
           )}
         </Col>
       </Row>

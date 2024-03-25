@@ -5,11 +5,57 @@ describe('fallA5person', () => {
 
   it('', () => {
     doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    cy.get('[id="again-btn"]').click();
+    doingExam();
+    // cy.get('[id="again-btn"]').click();
+    // doingExam();
+    // cy.get('[id="again-btn"]').click();
+    // doingExam();
+    // cy.get('[id="again-btn"]').click();
+    // doingExam();
+    // cy.get('[id="again-btn"]').click();
+    // doingExam();
+    // cy.get('[id="again-btn"]').click();
+    // doingExam();
+    // cy.get('[id="again-btn"]').click();
+    // doingExam();
+    // cy.get('[id="again-btn"]').click();
+    // doingExam();
+    // cy.get('[id="again-btn"]').click();
+    // doingExam();
+    // cy.get('[id="again-btn"]').click();
+    // doingExam();
+    // cy.get('[id="again-btn"]').click();
+    // doingExam();
   });
 });
 
 const doingExam = () => {
-  const userName = `user-${Math.floor(Date.now() / 1000)}`;
+  const userName = `user-${Math.floor(Date.now())}`;
   cy.get("[name='username']").type(userName);
   cy.get('[id="enter-btn"]').click();
   for (let i = 0; i < 19; i++) {
